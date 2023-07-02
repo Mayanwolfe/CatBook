@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Cat Info</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center mb-4">Edit Cat Information</h2>
+          <form action="/edit/<%= cat._id %>" method="POST">
+            <div class="form-group">
+              <label for="name">Cat's Name</label>
+              <input type="text" class="form-control" id="name" name="name" value="<%= cat.name %>" required>
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" class="form-control" id="age" name="age" value="<%= cat.age %>" required>
+            </div>
+            <div class="form-group">
+              <label for="favoriteFood">Favorite Food</label>
+              <input type="text" class="form-control" id="favoriteFood" name="favoriteFood" value="<%= cat.favoriteFood %>" required>
+            </div>
+            <div class="form-group">
+              <label for="funFact">Fun Fact</label>
+              <input type="text" class="form-control" id="funFact" name="funFact" value="<%= cat.funFact %>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
